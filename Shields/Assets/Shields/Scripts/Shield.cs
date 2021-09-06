@@ -24,17 +24,15 @@ public class Shield : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if(Physics.Raycast(ray,out hit))
+            if (Physics.Raycast(ray, out hit))
             {
-                //HitShield(hit.point);
+                HitShield(hit.point);
             }
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
             OpenCloseShield();
         }
-        _renderer.material.SetFloat("_DisolveStartHeight", transform.position.y);
-        _renderer.material.SetFloat("_Scale", transform.localScale.y*1.2f);
     }
 
     public void HitShield(Vector3 hitPos)
